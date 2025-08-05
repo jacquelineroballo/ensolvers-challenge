@@ -1,4 +1,5 @@
 # 📋 Note Creation App
+<img width="1791" height="822" alt="note taker" src="https://github.com/user-attachments/assets/82e1ad48-e232-4ba5-a8ba-b0e1d84c7e16" />
 
 <div align="center">
 
