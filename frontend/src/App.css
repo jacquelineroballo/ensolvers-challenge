@@ -1,0 +1,261 @@
+/* Global Styles */
+:root {
+  --primary-gradient: linear-gradient(135deg, #E0B0FF, #C8A2C8);
+  --secondary-gradient: linear-gradient(135deg, #DDA0DD, #BA55D3);
+  --danger-gradient: linear-gradient(135deg, #FF69B4, #DB7093);
+  --text-color: #4B0082;
+  --bg-gradient: linear-gradient(135deg, #FFF0F5, #E6E6FA);
+  --card-bg: #ffffff;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* App Layout */
+.app-header {
+  background: var(--primary-gradient);
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-main {
+  padding: 2rem 0;
+}
+
+/* Task List */
+.task-list-header {
+  margin-bottom: 2rem;
+}
+
+.tasks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Task Item */
+.task-item {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.task-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.task-header {
+  margin-bottom: 1rem;
+}
+
+.task-description {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.task-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.status-pending {
+  background: linear-gradient(135deg, #FFC0CB, #FFB6C1);
+  color: #C71585;
+}
+
+.status-progress {
+  background: linear-gradient(135deg, #E6E6FA, #D8BFD8);
+  color: #9370DB;
+}
+
+.status-completed {
+  background: linear-gradient(135deg, #DDA0DD, #DA70D6);
+  color: #8B008B;
+}
+
+/* Task Form */
+.task-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.75rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #BA55D3;
+  box-shadow: 0 0 0 0.2rem rgba(186, 85, 211, 0.25);
+}
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid,
+.form-select.is-invalid,
+.was-validated .form-select:invalid {
+  border-color: #FF69B4;
+  background-image: none;
+}
+
+.form-control.is-invalid:focus,
+.was-validated .form-control:invalid:focus,
+.form-select.is-invalid:focus,
+.was-validated .form-select:invalid:focus {
+  border-color: #FF69B4;
+  box-shadow: 0 0 0 0.2rem rgba(255, 105, 180, 0.25);
+}
+
+.invalid-feedback {
+  color: #FF69B4;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.form-select {
+  background-image: linear-gradient(45deg, transparent 50%, #BA55D3 50%),
+                    linear-gradient(135deg, #BA55D3 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+                       calc(100% - 15px) calc(1em + 2px);
+  background-size: 5px 5px,
+                    5px 5px;
+  background-repeat: no-repeat;
+}
+
+.form-select:focus {
+  background-image: linear-gradient(45deg, #BA55D3 50%, transparent 50%),
+                    linear-gradient(135deg, transparent 50%, #BA55D3 50%);
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.btn-add {
+  background: var(--secondary-gradient);
+  color: white;
+}
+
+.btn-outline-primary {
+  border: 2px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box,
+              var(--primary-gradient) border-box;
+  color: #9370DB;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background: var(--primary-gradient);
+  color: white;
+  border-color: transparent;
+}
+
+.btn-outline-danger {
+  border: 2px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box,
+              var(--danger-gradient) border-box;
+  color: #DB7093;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+  background: var(--danger-gradient);
+  color: white;
+  border-color: transparent;
+}
+
+.btn-submit {
+  background: var(--secondary-gradient);
+  color: white;
+  padding: 0.75rem 1.5rem;
+}
+
+.btn-cancel {
+  background: linear-gradient(135deg, #D8BFD8, #DDA0DD);
+  color: white;
+  margin-right: 1rem;
+  padding: 0.75rem 1.5rem;
+}
+
+/* States */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.125rem;
+  color: #666;
+}
+
+.error {
+  background: linear-gradient(135deg, #fee, #fdd);
+  color: var(--danger-color);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.no-tasks {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-size: 1.125rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tasks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .task-form-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .task-footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
